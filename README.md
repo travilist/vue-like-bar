@@ -1,24 +1,9 @@
 # like-bar
 
-## Project setup
-```
-yarn install
-```
+## Install
+Import the LikeBar.vue component in the Components folder into your own component.
 
-### Compiles and hot-reloads for development
+## Usage
+```html
+<LikeBar :likes="likes" :dislikes="dislikes" :key="likes+dislikes"/>
 ```
-yarn serve
-```
-
-### Compiles and minifies for production
-```
-yarn build
-```
-
-### Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
