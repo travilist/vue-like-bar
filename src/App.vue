@@ -1,29 +1,25 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+    <h1>LikeBar Test</h1>
+    <LikeBar :likes="likes" :dislikes="dislikes"/>
   </div>
 </template>
 
 <script lang="ts">
+import LikeBar from './components/LikeBar.vue';
 import { Component, Vue } from 'vue-property-decorator';
-import HelloWorld from './components/HelloWorld.vue';
 
 @Component({
   components: {
-    HelloWorld,
+    LikeBar,
   },
 })
-export default class App extends Vue {}
+export default class App extends Vue {
+  likes = 75;
+  dislikes = 25;
+}
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>
