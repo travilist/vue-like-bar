@@ -1,7 +1,12 @@
 <template>
   <div id="app">
     <h1>LikeBar Test</h1>
-    <LikeBar :likes="likes" :dislikes="dislikes"/>
+    <p>{{likes}} likes | {{dislikes}} dislikes</p>
+    <button @click="likes += 1">Like</button>
+    <button @click="dislikes += 1">Dislike</button>
+    <button @click="likes = 1; dislikes = 1">Reset</button>
+
+    <LikeBar :likes="likes" :dislikes="dislikes" :key="likes+dislikes"/>
   </div>
 </template>
 
@@ -15,8 +20,8 @@ import { Component, Vue } from 'vue-property-decorator';
   },
 })
 export default class App extends Vue {
-  likes = 75;
-  dislikes = 25;
+  likes = 1;
+  dislikes = 1;
 }
 </script>
 

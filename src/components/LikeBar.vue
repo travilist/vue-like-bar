@@ -1,7 +1,7 @@
 <template>
     <div id="likebar">
-        <span id="likes"/>
-        <span id="dislikes"/>
+        <div id="likes" :style="width(this.likesPct)"></div>
+        <div id="dislikes" :style="width(this.dislikesPct)"></div>
     </div>
 </template>
 
@@ -28,13 +28,34 @@ export default class LikeBar extends Vue {
 
   calculate(): void {
       this.total = this.likes + this.dislikes;
-      this.likesPct = this.likes / this.total;
-      this.dislikesPct = this.dislikes / this.total;
+      this.likesPct = (this.likes / this.total) * 100;
+      this.dislikesPct = (this.dislikes / this.total) * 100;
       console.log(`Likes(Pct)\tDislikes(Pct)\n${this.likes}(${this.likesPct})\t${this.dislikes}(${this.dislikesPct})`);
   }
+
+    width(amount: number): string {
+        return `width: ${amount}%`
+    }
 }
 </script>
 
 <style scoped>
+    #likebar {
+        background-color: lightgray;
+        height: 2vh;
+        width: 20vw;
+    }
 
+    #likes, #dislikes { 
+        height: 100%;
+        display: inline-block;
+    }
+
+    #likes {
+        background-color: lightgreen;
+    }
+
+    #dislikes {
+        background-color: lightcoral;
+    }
 </style>
