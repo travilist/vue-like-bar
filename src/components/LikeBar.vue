@@ -44,6 +44,8 @@ export default class LikeBar extends Vue {
         background-color: lightgray;
         height: 2vh;
         width: 20vw;
+        overflow: hidden;
+        border-radius: 20px;
     }
 
     #likes, #dislikes { 

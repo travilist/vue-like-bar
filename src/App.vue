@@ -26,5 +26,11 @@ export default class App extends Vue {
 </script>
 
 <style>
-
+  #likebar {
+    margin-top: 10px;
+  }
+  
+  button {
+    margin-right: 10px;
+  }
 </style>
